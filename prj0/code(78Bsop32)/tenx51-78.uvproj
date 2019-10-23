@@ -374,12 +374,12 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Source Group 1</GroupName>
+          <GroupName>New Group</GroupName>
           <Files>
             <File>
-              <FileName>STARTUP_TENX52.A51</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\STARTUP_TENX52.A51</FilePath>
+              <FileName>keys.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\keys.c</FilePath>
             </File>
             <File>
               <FileName>display.c</FileName>
