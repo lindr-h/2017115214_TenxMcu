@@ -1,26 +1,19 @@
-#ifndef _init_h
-#define _init_h
+#ifndef __init_h
+#define __init_h
+// Hal: exp: #define P_led P10 -----------------
 
-#define P_led P1_1
+ // Const: exp: #define D_data 1 ----------------
 
-#define D_ledOn  1  //高电位亮
-#define D_ledOff 0   //低电位灭
-
-
-
-#ifdef _init_c
+// Globle Var -----------------------------------------
+#ifdef __init_c
 
 #else
 
 #endif
+// Action Macro: exp: #define F_getData() ------
 
-
-//
-#define F_ledOn() P_led = D_ledOn
-#define F_ledOff() P_led = D_ledOff
-//Function
+// Function ------------------------------------
 void SysInit();
 void VarsInit();
 
-void delayMs(uint16_t msCount);
-#endif
+#endif 
