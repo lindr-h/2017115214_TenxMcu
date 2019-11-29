@@ -13,7 +13,7 @@ void main() {           //循环一次约1/10ms
     TimeProcess();
     TaskSetting();
     TaskProcess();
-    DisplayProcess();
+    //DisplayProcess();
     }
 }
 //=============================================================================
@@ -35,6 +35,13 @@ void TimeProcess() {   //基于时间片的调度框架
   if (second >= D_1000ms) {
     // 1s 执行一次
     second = 0;
+    vData = 0;
+  }
+  vData +=gData;
+  if (vData > 100) {
+    F_ledOn();
+  } else {
+    F_ledOff();
   }
 }
 //=============================================================================
