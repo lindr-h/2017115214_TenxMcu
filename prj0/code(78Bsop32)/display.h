@@ -1,7 +1,8 @@
 #ifndef __display_h
 #define __display_h
 // Hal: exp: #define P_led P10 -----------------
-#define P_led P1_1
+//#define P_led P1_1
+#define P_led P1_0
 // Const: exp: #define D_data 1 ----------------
 #define D_ledOn 1  //高电位亮
 #define D_ledOff 0 //低点位灭
