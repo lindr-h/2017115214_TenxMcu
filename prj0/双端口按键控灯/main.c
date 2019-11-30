@@ -4,30 +4,49 @@
 void main() {
   SysInit();//系统初始化
   VarsInit();//变量初始化
-  F_ledOn();
-  delayMs(500);
+  
   //使能看门狗
   F_turnOnWDT();
 
   while (1) {
-   //清除看门狗定时器
+   //喂狗
    F_clearWDT();
-   delayMs(20);
-   GetKeys();
-    if (D_keyValue1 == keyValue) {//当keyValue为1时，led灯电平改变
-      F_ledNeg();
-    }
-    keyValue = D_keyNull;
-  }	  
-}	
-
-//=============================================================================
-void delayMs(uint16_t msCount) {
-  uint16_t i, j;
-  for (i = 0; i < msCount; i++) {
-    for (j = 0; j < 1000; j++) {
-      //清除看门狗定时器
-      F_clearWDT();
-    }
+   //业务代码
+   TimeProcess();
+   TaskSetting();
+   TaskProcess();
+   DisplayProcess();
   }
 }
+void TimeProcess() {
+  static uint8_t timer5ms = 0;
+  static uint16_t second = 0;
+
+   if (b1ms) {
+    // 1ms 执行一次
+    b1ms = 0;
+    timer5ms++;
+    second++;
+  }
+	 //每5ms以上获取一次键值
+  if (timer5ms >= D_5ms) {
+       GetKeys();	 
+   }
+  if (second >= D_1000ms) {
+    // 1s 执行一次
+    second = 0;
+  }	  
+}	
+//=============================================================================
+void TaskProcess() {}
+//=============================================================================
+void TaskSetting() {
+	 if (D_keyValue1 == keyValue) {
+		    F_ledNeg();
+		 }
+  keyValue = D_keyNull;
+}	
+//=============================================================================
+void DisplayProcess() {
+  // F_ledOn();
+} 
