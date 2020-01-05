@@ -432,9 +432,9 @@
               <FilePath>.\keys.h</FilePath>
             </File>
             <File>
-              <FileName>dig_display.c</FileName>
+              <FileName>tempAd.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\dig_display.c</FilePath>
+              <FilePath>.\tempAd.c</FilePath>
             </File>
           </Files>
         </Group>
