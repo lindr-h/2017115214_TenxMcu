@@ -1,13 +1,12 @@
-#define __buzz_c 
+#define __buzz_c
+
 #include "includeAll.h"
+#include "buzz.h"
+void BuzzCount(uint8_t count)
+{	
+    buzzCounter = count ; 
+}
 
-
-void showbell(){
-	int i;
-for(i = 0 ;i < 100; i++){
-	 F_buzzOn();
-	 delayMs(1);
-	 F_buzzOff();
-	 delayMs(1);
-	  }
+void Buzz(){
+    buzzLastTimer = D_buzzLastTime ;
 }
