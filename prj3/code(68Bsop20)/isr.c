@@ -135,7 +135,7 @@ void TIMER3_int(void) interrupt 7
 // OutPut:	none
 // Author:
 //=============================================================================
-void P1_int(void) interrupt 8
+/*void P1_int(void) interrupt 8
 {
 	INTFLG &= ~P1IF;
 }
@@ -162,4 +162,4 @@ void ADC_TK_int(void) interrupt 10
 	INTFLG &= ~ADIF;
 	INTFLG &= ~TKIF;
 	TKCON2 &= ~TKAUTO;  //disable touch key auto scan
-}
+}*/
